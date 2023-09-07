@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom/client';
 
 import reportWebVitals from './test/reportWebVitals';
 
-// ? Components
-import App from './App';
+// ? Routes
+import Routes from './Routes';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Routes />
   </React.StrictMode>
 );
 
