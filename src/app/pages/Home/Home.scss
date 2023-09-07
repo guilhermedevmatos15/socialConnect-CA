@@ -4,4 +4,121 @@
 
 .Home {
    width: 100%;
+   min-height: 100vh;
+   padding: 30px;
+   background: linear-gradient(to right, $color-01, $color-04);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+   .container {
+      $height: 400px;
+
+      width: 100%;
+      max-width: 750px;
+      min-height: $height;
+      background-color: #ffffff;
+      box-shadow: 0 0 40px #00000081;
+      border-radius: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      overflow: hidden;
+
+      > div {
+         width: 50%;
+      }
+
+      // ? Content
+      > div:first-child {
+         $color-text: #111111;
+
+         padding: 50px 40px;
+
+         h2 {
+            margin-top: 18px;
+            text-align: center;
+            font-weight: 600;
+            color: $color-text;
+            font-size: 1.9rem;
+         }
+
+         .inputs {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+         }
+
+         p {
+            margin-top: 15px;
+            font-size: 0.9rem;
+            text-align: center;
+
+            span {
+               color: $color-02;
+               text-decoration: underline;
+            }
+         }
+
+         button {
+            width: 80%;
+            max-width: 240px;
+            display: block;
+            margin: 25px auto 0 auto;
+            background-color: darken($color-05, 10);
+            font-weight: 500;
+         }
+      }
+
+      // ? Image
+      .image {
+         $bg-color: rgba($color-01, 0.6);
+
+         min-height: $height;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         background-color: $bg-color;
+
+         img {
+            width: 100%;
+            max-width: 250px;
+         }
+      }
+
+      @media (max-width: 800px) {
+         & {
+            max-width: 400px;
+            padding: 0;
+
+            > div:first-child {
+               width: 100%;
+
+               button {
+                  max-width: 260px;
+               }
+            }
+
+            .image {
+               display: none;
+            }
+         }
+      }
+
+      @media (max-width: 390px) {
+         & {
+
+            > div:first-child {
+               padding: 50px 20px;
+
+               h2 {
+                  font-size: 1.8rem;
+               }
+            }
+         }
+      }
+   }
 }

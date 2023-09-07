@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+@import './variables.scss';
+
+.input {
+   min-width: 220px;
+   padding: 5px 10px;
+   border-radius: 10px;
+   border: 1px solid rgb(12, 12, 12);
+   font-family: $font-default, sans-serif;
+   font-size: 0.88rem;
+   transition: all $transition;
+   
+   &:focus {
+      outline: none;
+      box-shadow: 0 0 10px $color-01;
+      border: 1px solid $color-01;
+   }
+}

@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+@import '../../../styles/extra/variables.scss';
+
+.Header {
+   width: 100%;
+   height: $header-height;
+   position: fixed;
+   top: 0;
+   left: 0;
+   padding: 30px 100px;
+   -webkit-backdrop-filter: blur(8px);
+   backdrop-filter: blur(8px);
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+
+   img {
+      width: 200px;
+   }
+
+   .buttons {
+      display: flex;
+      gap: 8px;
+
+      button:first-child {
+         background-color: transparent;
+         border: 1px solid $color-01;
+         color: #141414;
+
+         &:hover {
+            background-color: $color-01;
+            color: white;
+         }
+      }
+
+      button:last-child {
+         background-color: $color-02;
+
+         &:hover {
+            background-color: lighten($color-02, 25%);
+         }
+      }
+   }
+}
