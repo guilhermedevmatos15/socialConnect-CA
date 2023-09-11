@@ -18,12 +18,16 @@ import IllustrationError from '../../assets/img/illustrations/illustration-404-b
 const Error = () => {
    return (
       <div className="Error">
-         <img src={IllustrationError} alt="Illustration error, Page Not Found" />
-         <div className='error-content'>
+         <img
+            src={IllustrationError}
+            alt="Illustration error, Page Not Found"
+         />
+         <div className="error-content">
             <h1>Page Not Found</h1>
             <p>Oops, page not found in our app</p>
-            <Link to='/feed'>
-               <button className='btn'>Go to Feed</button>
+
+            <Link to="/feed">
+               <button className="btn">Go to Feed</button>
             </Link>
          </div>
       </div>
