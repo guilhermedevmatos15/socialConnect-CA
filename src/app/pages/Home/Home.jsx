@@ -119,7 +119,8 @@ const Home = () => {
                <img
                   src={Illustration}
                   alt="Illustration of a girl at her computer"
-                  data-aos="zoom-in" data-aos-duration="1800"
+                  data-aos="zoom-in"
+                  data-aos-duration="1800"
                />
             </div>
          </div>

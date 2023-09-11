@@ -1,0 +1,48 @@
+@charset "UTF-8";
+
+@import '../../styles/extra/variables.scss';
+
+.Error {
+   $color-bg: lighten($color-02, 20);
+
+   width: 100%;
+   min-height: 100vh;
+   padding: 30px;
+   background: $color-bg;
+   text-align: center;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   gap: 50px;
+
+   img {
+      width: 90%;
+      max-width: 300px;
+   }
+
+   .error-content {
+      color: white;
+
+      h1 {
+         font-weight: 600;
+         font-size: 2.5rem;
+      }
+
+      p {
+         margin-top: 10px;
+         color: rgba(white, 0.9);
+      }
+
+      button {
+         margin-top: 15px;
+         background-color: $color-05;
+         color: rgb(17, 17, 17);
+         font-weight: 500;
+         
+         &:hover {
+            background-color: darken($color-05, 20);
+         }
+      }
+   }
+}
