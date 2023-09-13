@@ -25,7 +25,7 @@ const Home = () => {
 
    useEffect(() => {
       if (user?.name) {
-         Navigate('/other');
+         Navigate('/feed');
       } else {
          const newPassword = getRamdomNumber(100, 999);
          setPassword(() => newPassword);
@@ -37,15 +37,15 @@ const Home = () => {
          values.every((value) => String(value).length !== 0);
 
       if (checkValues(inputName, inputPassword)) {
-         if (String(inputName).length < 3 || String(inputName).length > 8) {
+         if (String(inputName).length < 3 || String(inputName).length > 12) {
             alert(
-               'Please, enter a new name, being greater than 3 and less than 8 characters'
+               'Please, enter a new name, being greater than 3 and less than 12 characters'
             );
          } else if (Number(inputPassword) !== password) {
             alert('Please, check the password passed to you');
             alert(`Your password is: ${password}`);
          } else {
-            Navigate('/other');
+            Navigate('/feed');
             setUser({ ...user, name: inputName });
          }
       }

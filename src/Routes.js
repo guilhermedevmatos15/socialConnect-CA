@@ -6,6 +6,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from './App';
 import Home from './app/pages/Home/Home';
 import Error from './app/pages/Error/Error';
+import Feed from './app/pages/Feed/Feed';
+import ForYou from './app/pages/ForYou/ForYou';
 
 const Router = createBrowserRouter([
    {
@@ -16,6 +18,16 @@ const Router = createBrowserRouter([
          {
             path: '/',
             element: <Home />
+         },
+         {
+            path: '/feed',
+            element: <Feed />,
+            children: [
+               {
+                  path: '/feed/foryou',
+                  element: <ForYou />
+               }
+            ],
          }
       ]
    }

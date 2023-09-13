@@ -11,7 +11,6 @@ const UserContext = ({ children }) => {
       const object = JSON.parse(localStorage.getItem(keyLocalStorage));
 
       if (object?.name) {
-         console.log(object);
          setUser(object);
       }
    }, []);
