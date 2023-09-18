@@ -2,16 +2,16 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-// ? style
+// * style
 import './Home.scss';
 
-// ? scripts
-import getRamdomNumber from '../../utils/getRamdomNumber';
+// * scripts
+import getRandomNumber from '../../utils/getRandomNumber';
 
-// ? contexts
+// * contexts
 import { userContext } from '../../contexts/UserContext';
 
-// ? img
+// * img
 import Illustration from '../../assets/img/illustrations/illustration-blue.svg';
 
 const Home = () => {
@@ -25,9 +25,9 @@ const Home = () => {
 
    useEffect(() => {
       if (user?.name) {
-         Navigate('/feed');
+         Navigate('/dashboard');
       } else {
-         const newPassword = getRamdomNumber(100, 999);
+         const newPassword = getRandomNumber(100, 999);
          setPassword(() => newPassword);
       }
    }, []);
@@ -45,8 +45,10 @@ const Home = () => {
             alert('Please, check the password passed to you');
             alert(`Your password is: ${password}`);
          } else {
-            Navigate('/feed');
-            setUser({ ...user, name: inputName });
+            Navigate('/dashboard');
+
+            const imageIcon = 'https://i.pinimg.com/564x/57/00/c0/5700c04197ee9a4372a35ef16eb78f4e.jpg';
+            setUser({ ...user, name: inputName, image: imageIcon });
          }
       }
    }

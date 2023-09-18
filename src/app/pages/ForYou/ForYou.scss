@@ -3,5 +3,29 @@
 @import '../../styles/extra/variables.scss';
 
 .ForYou {
+   width: 100%;
+   max-width: 1000px;
+   margin: auto;
 
+   section {
+      margin-top: 30px;
+      padding: 30px;
+      border-radius: 20px;
+      background-color: white;
+   }
+
+   h1 {
+      font-size: 2.2rem;
+      font-weight: 600;
+   }
+   
+   .posts {
+      margin: 30px auto 0 auto;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 30px;
+   }
 }

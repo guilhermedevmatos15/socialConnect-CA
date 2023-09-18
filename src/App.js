@@ -1,12 +1,12 @@
 import React from 'react';
 
-// ? React Router
+// * React Router
 import { Outlet } from 'react-router-dom';
 
-// ? Styles
+// * Styles
 import './app/styles/index.scss';
 
-// ? AOS (animation)
+// * AOS (animation)
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 AOS.init({
@@ -14,11 +14,7 @@ AOS.init({
 });
 
 const App = () => {
-   return (
-      <>
-         <Outlet />
-      </>
-   );
+   return <Outlet />;
 };
 
 export default App;

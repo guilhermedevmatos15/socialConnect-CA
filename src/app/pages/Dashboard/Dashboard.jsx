@@ -4,9 +4,10 @@ import { useNavigate, Outlet } from 'react-router-dom';
 
 // * components
 import SideBar from '../../components/shared/SideBar/SideBar';
+import Header from '../../components/shared/Header/Header';
 
 // * style
-import './Feed.scss';
+import './Dashboard.scss';
 
 // * scripts
 
@@ -17,26 +18,29 @@ import { userContext } from '../../contexts/UserContext';
 
 // * icons
 
-const Feed = () => {
+const Dashboard = () => {
    const Navigate = useNavigate();
    
    const { user } = useContext(userContext);
    
    useEffect(() => {
       if (user?.name) {
-         Navigate('/feed/foryou');
+         Navigate('/dashboard/foryou');
       } else {
          Navigate('/');
       }
    }, []);
 
    return (
-      <div className="Feed">
+      <div className="Dashboard">
          <SideBar />
 
-         <Outlet />
+         <div>
+            <Header />
+            <Outlet />
+         </div>
       </div>
    );
 };
 
-export default Feed;
+export default Dashboard;

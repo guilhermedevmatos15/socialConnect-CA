@@ -3,15 +3,18 @@ import React from 'react';
 
 // ? Contexts
 import UserContext from './UserContext';
+import PostContext from './PostContext';
 
-const GlobalContext = ({ children }) => {
+const Store = ({ children }) => {
    return(
       <>
          <UserContext>
-            {children}
+            <PostContext>
+               {children}
+            </PostContext>
          </UserContext>
       </>
    );
 };
 
-export default GlobalContext;
+export default Store;

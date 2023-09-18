@@ -6,7 +6,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from './App';
 import Home from './app/pages/Home/Home';
 import Error from './app/pages/Error/Error';
-import Feed from './app/pages/Feed/Feed';
+import Dashboard from './app/pages/Dashboard/Dashboard';
 import ForYou from './app/pages/ForYou/ForYou';
 
 const Router = createBrowserRouter([
@@ -20,11 +20,11 @@ const Router = createBrowserRouter([
             element: <Home />
          },
          {
-            path: '/feed',
-            element: <Feed />,
+            path: '/dashboard',
+            element: <Dashboard />,
             children: [
                {
-                  path: '/feed/foryou',
+                  path: '/dashboard/foryou',
                   element: <ForYou />
                }
             ],

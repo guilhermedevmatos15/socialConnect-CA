@@ -26,7 +26,7 @@ const Error = () => {
             <h1>Page Not Found</h1>
             <p>Oops, page not found in our app</p>
 
-            <Link to="/feed">
+            <Link to="/dashboard">
                <button className="btn">Go to Feed</button>
             </Link>
          </div>

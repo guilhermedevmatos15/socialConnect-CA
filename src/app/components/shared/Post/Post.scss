@@ -1,0 +1,64 @@
+@charset "UTF-8";
+
+@import '../../../styles/extra/variables.scss';
+
+.Post {
+   width: 100%;
+   min-width: 300px;
+   max-width: 350px;
+   // background-color: rgb(199, 199, 199);
+   box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+   border-radius: 20px;
+   overflow: hidden;
+
+   > img {
+      width: 100%;
+      transition: all $transition;
+      
+      &:hover {
+         transform: scale(105%);
+      }
+   }
+
+   .user-content {
+      width: 100%;
+      padding: 15px 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      img {
+         width: 30px;
+         border-radius: 50%;
+      }
+
+      .user-info {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         gap: 10px;
+         cursor: pointer;
+
+         p {
+            font-size: 0.85rem;
+         }
+      }
+
+      .user-iterations {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         gap: 3px;
+         cursor: pointer;
+
+         .icon {
+            font-size: 1rem;
+            transition: all $transition;
+         }
+
+         .like-counter {
+            font-size: 0.95rem;
+         }
+      }
+   }
+}

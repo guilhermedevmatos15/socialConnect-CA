@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+@import '../../styles/extra/variables.scss';
+
+.Dashboard {
+   width: 100%;
+   min-height: 100vh;
+   display: flex;
+   justify-content: flex-start;
+   align-items: flex-start;
+
+   > div {
+      $bg-color: rgb(232, 232, 232);
+
+      width: 100%;
+      margin-left: $sidebar-width;
+      padding: 50px;
+      background-color: $bg-color;
+   }
+}

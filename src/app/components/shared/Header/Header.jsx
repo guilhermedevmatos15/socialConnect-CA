@@ -1,8 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+// import PropTypes from 'prop-types';
 
 // * components
-import Navigation from '../Navigation/Navigation';
 
 // * style
 import './Header.scss';
@@ -10,33 +10,36 @@ import './Header.scss';
 // * scripts
 
 // * contexts
+import { userContext } from '../../../contexts/UserContext';
 
 // * img
 
 // * icons
 
-const Header = ({ navigator }) => {
+const Header = () => {
+   const { user } = useContext(userContext);
+
+   const Navigate = useNavigate();
+
    return (
       <header className="Header">
-         <img
-            src="/logos/sc-color.png"
-            alt="Our company logo, Social Connect "
-         />
-
-         {navigator && (
-            <Navigation color='black' fontSize='1rem' gap='30px' />
-         )}
-
-         <div className="buttons">
-            <button className="btn">Sing In</button>
-            <button className="btn">Sing Up</button>
+         <div className="ignore-element"></div>
+         <div>
+            <button className="btn">Add Post</button>
+            <img
+               className="header-profile-image"
+               src={user?.image}
+               alt="user profile img"
+               onClick={(e) => Navigate('dashboard/profile')}
+               title="Go to Profile"
+            />
          </div>
       </header>
    );
 };
 
-Header.propTypes = {
-   navigator: PropTypes.bool.isRequired,
-};
+// Header.propTypes = {
+//    prop: PropTypes,
+// };
 
 export default Header;
