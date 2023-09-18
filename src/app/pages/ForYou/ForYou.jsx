@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 
 // * components
-import Fault from '../../components/shared/Fault/Fault';
+import Loading from '../../components/shared/Loading/Loading';
 import Post from '../../components/shared/Post/Post';
 
 // * style
@@ -22,7 +22,7 @@ const ForYou = () => {
    return (
       <div className="ForYou">
          {Array.from(posts).length === 0 ? (
-            <Fault page="For you" />
+            <Loading page="For you" />
          ) : (
             <section>
                <h1>For You</h1>

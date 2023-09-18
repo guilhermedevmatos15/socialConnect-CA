@@ -8,6 +8,7 @@ import Home from './app/pages/Home/Home';
 import Error from './app/pages/Error/Error';
 import Dashboard from './app/pages/Dashboard/Dashboard';
 import ForYou from './app/pages/ForYou/ForYou';
+import TopRated from './app/pages/TopRated/TopRated';
 
 const Router = createBrowserRouter([
    {
@@ -17,7 +18,7 @@ const Router = createBrowserRouter([
       children: [
          {
             path: '/',
-            element: <Home />
+            element: <Home />,
          },
          {
             path: '/dashboard',
@@ -25,12 +26,16 @@ const Router = createBrowserRouter([
             children: [
                {
                   path: '/dashboard/foryou',
-                  element: <ForYou />
-               }
+                  element: <ForYou />,
+               },
+               {
+                  path: '/dashboard/top-rated',
+                  element: <TopRated />,
+               },
             ],
-         }
-      ]
-   }
+         },
+      ],
+   },
 ]);
 
 const Routes = () => {
