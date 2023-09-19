@@ -9,6 +9,7 @@ import Error from './app/pages/Error/Error';
 import Dashboard from './app/pages/Dashboard/Dashboard';
 import ForYou from './app/pages/ForYou/ForYou';
 import TopRated from './app/pages/TopRated/TopRated';
+import Favorite from './app/pages/Favorite/Favorite';
 
 const Router = createBrowserRouter([
    {
@@ -31,6 +32,10 @@ const Router = createBrowserRouter([
                {
                   path: '/dashboard/top-rated',
                   element: <TopRated />,
+               },
+               {
+                  path: '/dashboard/favorite',
+                  element: <Favorite />,
                },
             ],
          },
