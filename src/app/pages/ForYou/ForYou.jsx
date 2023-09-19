@@ -17,7 +17,7 @@ import { postsContext } from '../../contexts/PostContext';
 // * icons
 
 const ForYou = () => {
-   const { posts } = useContext(postsContext);
+   const { posts, setPosts } = useContext(postsContext);
 
    return (
       <div className="ForYou">
@@ -25,7 +25,18 @@ const ForYou = () => {
             <Loading page="For you" />
          ) : (
             <section>
-               <h1>For You</h1>
+               <div>
+                  <h1>For You</h1>
+                  <button
+                     className="btn"
+                     onClick={(e) => {
+                        setPosts([]);
+                        window.location.reload();
+                     }}
+                  >
+                     Refresh Posts
+                  </button>
+               </div>
                <div className="posts">
                   {posts.map((post, index, arr) => {
                      return (

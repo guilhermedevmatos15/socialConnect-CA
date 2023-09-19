@@ -16,6 +16,10 @@ import { postsContext } from '../../contexts/PostContext';
 // * img
 
 // * icons
+import { FaMedal } from "react-icons/fa";
+import { BiMedal } from 'react-icons/bi';
+import { GiStarMedal } from 'react-icons/gi';
+
 
 const TopRated = () => {
    const { posts } = useContext(postsContext);
@@ -35,24 +39,16 @@ const TopRated = () => {
    }, [posts]);
 
    return (
-      <>
+      <div className="TopRated">
          {topPosts.length < 1 ? (
             <Loading page="Top Rated" />
          ) : (
-            <section className="TopRated">
+            <section>
+               <h1>Top Rated</h1>
+
                <div className="podium">
-                  <div className="podium-element" id="podium-2">
-                     <Post
-                        id={topPosts[1]?._id}
-                        name={topPosts[1]?.author}
-                        description={topPosts[1]?.description}
-                        imagePost={topPosts[1]?.urlToImage}
-                        imageUser={topPosts[1]?.imageUser}
-                        likeCont={topPosts[1]?.likeCont}
-                        liked={topPosts[1]?.liked}
-                     />
-                  </div>
                   <div className="podium-element" id="podium-1">
+                     <h2>1° Place <FaMedal className='podium-medal' /></h2>
                      <Post
                         id={topPosts[0]?._id}
                         name={topPosts[0]?.author}
@@ -63,7 +59,20 @@ const TopRated = () => {
                         liked={topPosts[0]?.liked}
                      />
                   </div>
+                  <div className="podium-element" id="podium-2">
+                     <h2>2° Place <BiMedal className='podium-medal' /></h2>
+                     <Post
+                        id={topPosts[1]?._id}
+                        name={topPosts[1]?.author}
+                        description={topPosts[1]?.description}
+                        imagePost={topPosts[1]?.urlToImage}
+                        imageUser={topPosts[1]?.imageUser}
+                        likeCont={topPosts[1]?.likeCont}
+                        liked={topPosts[1]?.liked}
+                     />
+                  </div>
                   <div className="podium-element" id="podium-3">
+                     <h2>3° Place <GiStarMedal className='podium-medal' /></h2>
                      <Post
                         id={topPosts[2]?._id}
                         name={topPosts[2]?.author}
@@ -77,7 +86,7 @@ const TopRated = () => {
                </div>
             </section>
          )}
-      </>
+      </div>
    );
 };
 

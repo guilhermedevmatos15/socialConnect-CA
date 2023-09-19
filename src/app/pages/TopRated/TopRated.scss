@@ -1,0 +1,67 @@
+@charset "UTF-8";
+
+@import '../../styles/extra/variables.scss';
+
+.TopRated {
+   width: 100%;
+   max-width: 1000px;
+   margin: auto;
+
+   section {
+      margin-top: 30px;
+      padding: 30px 30px 80px 30px;
+      border-radius: 20px;
+      background-color: white;
+   }
+
+   h1 {
+      font-size: 2.2rem;
+      font-weight: 600;
+   }
+
+   .podium {
+      margin: 30px auto 0 auto;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 30px;
+
+      .podium-element {
+         display: flex;
+         flex-direction: column;
+         gap: 10px;
+
+         .Post {
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.562);
+         }
+
+         h2 {
+            font-weight: 600;
+            font-size: 1.6rem;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 10px;
+         }
+
+         &:nth-child(1) {
+            h2 {
+               color: darken(gold, 10);
+            }
+         }
+         &:nth-child(2) {
+            h2 {
+               color: darken(silver, 30);
+            }
+         }
+         &:nth-child(3) {
+            h2 {
+               color: brown;
+            }
+         }
+      }
+   }
+}
