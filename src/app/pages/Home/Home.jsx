@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -31,6 +30,7 @@ const Home = () => {
          const newPassword = getRandomNumber(100, 999);
          setPassword(() => newPassword);
       }
+   // eslint-disable-next-line react-hooks/exhaustive-deps
    }, []);
 
    function handleClickLogin(e) {

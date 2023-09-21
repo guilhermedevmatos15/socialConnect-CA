@@ -34,6 +34,15 @@
          color: rgba(white, 0.9);
       }
 
+      .link-button {
+         margin: auto;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         color: transparent;
+         text-decoration: none;
+      }
+
       button {
          margin-top: 15px;
          background-color: $color-05;

@@ -6,10 +6,13 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from './App';
 import Home from './app/pages/Home/Home';
 import Error from './app/pages/Error/Error';
+
 import Dashboard from './app/pages/Dashboard/Dashboard';
 import ForYou from './app/pages/ForYou/ForYou';
 import TopRated from './app/pages/TopRated/TopRated';
 import Favorite from './app/pages/Favorite/Favorite';
+
+import Profile from './app/pages/Profile/Profile';
 
 const Router = createBrowserRouter([
    {
@@ -36,6 +39,10 @@ const Router = createBrowserRouter([
                {
                   path: '/dashboard/favorite',
                   element: <Favorite />,
+               },
+               {
+                  path: '/dashboard/profile',
+                  element: <Profile />,
                },
             ],
          },

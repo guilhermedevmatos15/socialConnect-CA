@@ -47,7 +47,7 @@ const Header = ({ menu }) => {
                   className="header-profile-image"
                   src={user?.image}
                   alt="user profile img"
-                  onClick={(e) => Navigate('dashboard/profile')}
+                  onClick={(e) => Navigate('profile')}
                   title="Go to Profile"
                />
             </div>
