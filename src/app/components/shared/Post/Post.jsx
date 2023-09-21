@@ -4,6 +4,7 @@ import React, { memo, useContext } from 'react';
 
 // * style
 import './Post.scss';
+import './Post_responsive.scss';
 
 // * scripts
 

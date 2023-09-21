@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 
 // * components
-import Loading from '../../components/shared/Loading/Loading';
+import Message from '../../components/shared/Message/Message';
 import Post from '../../components/shared/Post/Post';
 
 // * style
@@ -15,14 +15,17 @@ import { postsContext } from '../../contexts/PostContext';
 // * img
 
 // * icons
+import { BiRefresh } from 'react-icons/bi';
 
 const ForYou = () => {
    const { posts, setPosts } = useContext(postsContext);
 
+   let messageLoading = 'Wait, this page is loading';
+
    return (
       <div className="ForYou">
-         {Array.from(posts).length === 0 ? (
-            <Loading page="For you" />
+         {posts.length === 0 ? (
+            <Message message={messageLoading} icon='load' />
          ) : (
             <section>
                <div>
@@ -34,7 +37,7 @@ const ForYou = () => {
                         window.location.reload();
                      }}
                   >
-                     Refresh Posts
+                     <BiRefresh className="btn-icon" /> Refresh
                   </button>
                </div>
                <div className="posts">

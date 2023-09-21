@@ -1,8 +1,8 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-// import PropTypes from 'prop-types';
 
 // * components
+import Menu from '../Menu/Menu';
 
 // * style
 import './Header.scss';
@@ -15,31 +15,45 @@ import { userContext } from '../../../contexts/UserContext';
 // * img
 
 // * icons
+import { HiMenu } from 'react-icons/hi';
+import { AiOutlinePlus } from 'react-icons/ai';
 
-const Header = () => {
+const Header = ({ menu }) => {
    const { user } = useContext(userContext);
 
    const Navigate = useNavigate();
 
+   const [openMenu, setOpenMenu] = useState(false);
+
    return (
-      <header className="Header">
-         <div className="ignore-element"></div>
-         <div>
-            <button className="btn">Add Post</button>
-            <img
-               className="header-profile-image"
-               src={user?.image}
-               alt="user profile img"
-               onClick={(e) => Navigate('dashboard/profile')}
-               title="Go to Profile"
-            />
-         </div>
-      </header>
+      <>
+         {JSON.parse(menu) && <Menu open={openMenu} setOpen={setOpenMenu} />}
+         <header className="Header">
+            {JSON.parse(menu) ? (
+               <HiMenu
+                  className="icon-menu"
+                  onClick={(e) => {
+                     setOpenMenu(true);
+                  }}
+               />
+            ) : (
+               <div className="ignore-element"></div>
+            )}
+            <div>
+               <button className="btn">
+                  <AiOutlinePlus className="btn-icon" /> To Add
+               </button>
+               <img
+                  className="header-profile-image"
+                  src={user?.image}
+                  alt="user profile img"
+                  onClick={(e) => Navigate('dashboard/profile')}
+                  title="Go to Profile"
+               />
+            </div>
+         </header>
+      </>
    );
 };
-
-// Header.propTypes = {
-//    prop: PropTypes,
-// };
 
 export default Header;

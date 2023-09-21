@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+@import '../../styles/extra/variables.scss';
+
+.Favorite {
+   @media (max-width: 530px) {
+      .Post {
+         min-width: 230px;
+      }
+   }
+}

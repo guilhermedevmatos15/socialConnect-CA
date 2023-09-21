@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+@import '../../styles/extra/variables.scss';
+
+.Dashboard {
+   > div {
+      @media (max-width: 450px) {
+         & {
+            padding: 50px 20px;
+         }
+      }
+   }
+}

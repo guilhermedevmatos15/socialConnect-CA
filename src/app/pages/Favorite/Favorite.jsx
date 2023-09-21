@@ -1,11 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
 
 // * components
-import Loading from '../../components/shared/Loading/Loading';
 import Post from '../../components/shared/Post/Post';
+import Message from '../../components/shared/Message/Message';
 
 // * style
 import './Favorite.scss';
+import './Favorite_responsive.scss';
 
 // * scripts
 
@@ -32,9 +33,7 @@ const Favorite = () => {
    return (
       <div className="Favorite">
          {favoritePosts.length < 1 ? (
-            <section className="no-favorites">
-               <p>Sorry! Você não tem postagens curtidas</p>
-            </section>
+            <Message message="Sorry! You didn't like any post" icon='no-like' />
          ) : (
             <section>
                <h1>Favorite Posts</h1>

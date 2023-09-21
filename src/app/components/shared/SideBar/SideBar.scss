@@ -58,31 +58,31 @@
          font-size: $font-size-icon;
       }
    }
-}
 
-// ? Close
-.SideBar.sidebar-close {
-   width: $sidebar-width;
-   padding: 20px;
-   box-shadow: 20px 0 20px rgba(0, 0, 0, 0.2);
+   // ? Close
+   &.sidebar-close {
+      width: $sidebar-width;
+      padding: 20px;
+      box-shadow: 20px 0 20px rgba(0, 0, 0, 0.2);
 
-   .image-icon {
-      width: 60px;
-      display: block;
-      margin-right: 8px;
-   }
+      .image-icon {
+         width: 60px;
+         display: block;
+         margin-right: 8px;
+      }
 
-   .image-fill {
-      display: none;
-   }
-
-   .link {
-      .text {
+      .image-fill {
          display: none;
       }
 
-      .icon {
-         font-size: 1.5rem;
+      .link {
+         .text {
+            display: none;
+         }
+
+         .icon {
+            font-size: 1.5rem;
+         }
       }
    }
 }

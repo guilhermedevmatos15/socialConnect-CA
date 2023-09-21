@@ -12,13 +12,32 @@
       padding: 30px;
       border-radius: 20px;
       background-color: white;
+
+      > div:first-child {
+         width: 100%;
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+
+         h1 {
+            font-size: 2.2rem;
+            font-weight: 600;
+         }
+
+         button {
+            // Ajusting padding
+            padding: 10px 20px 10px 18px;
+            
+            background-color: $color-04;
+            font-weight: 500;
+
+            &:hover {
+               background-color: darken($color-04, 10);
+            }
+         }
+      }
    }
 
-   h1 {
-      font-size: 2.2rem;
-      font-weight: 600;
-   }
-   
    .posts {
       margin: 30px auto 0 auto;
       width: 100%;

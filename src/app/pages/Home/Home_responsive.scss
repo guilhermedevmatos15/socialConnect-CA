@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+@import '../../styles/extra/variables.scss';
+
+.Home {
+   .container {
+      @media (max-width: 800px) {
+         & {
+            max-width: 400px;
+            padding: 0;
+
+            > div:first-child {
+               width: 100%;
+
+               button {
+                  max-width: 260px;
+               }
+            }
+
+            .image {
+               display: none;
+            }
+         }
+      }
+
+      @media (max-width: 390px) {
+         & {
+            > div:first-child {
+               padding: 50px 20px;
+
+               h2 {
+                  font-size: 1.8rem;
+               }
+            }
+         }
+      }
+   }
+}

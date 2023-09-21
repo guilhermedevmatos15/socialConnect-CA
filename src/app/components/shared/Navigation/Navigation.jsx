@@ -1,7 +1,5 @@
-/* eslint-disable no-unused-vars */
 import React from 'react';
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
 
 // * components
 
@@ -24,7 +22,7 @@ import { BiSolidLogIn } from 'react-icons/bi';
 const Navigation = () => {
    return (
       <>
-         <div className='basic-links-group'>
+         <div className="basic-links-group">
             <Link to="foryou" className="link">
                <span className="icon">
                   <AiFillStar />
@@ -63,7 +61,7 @@ const Navigation = () => {
             </Link>
          </div>
 
-         <div className='logout-link-group'>
+         <div className="logout-link-group">
             <div className="link">
                <span className="icon">
                   <BiSolidLogIn />
@@ -74,7 +72,5 @@ const Navigation = () => {
       </>
    );
 };
-
-Navigation.propTypes = {};
 
 export default Navigation;

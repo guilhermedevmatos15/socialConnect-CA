@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 // * style
 import './Home.scss';
+import './Home_responsive.scss';
 
 // * scripts
 import getRandomNumber from '../../utils/getRandomNumber';

@@ -18,32 +18,43 @@ import LogoColorIcon from '../../../assets/img/logos/sc-icon-color.png';
 // * icons
 import { BsArrowLeftCircle, BsArrowRightCircle } from 'react-icons/bs';
 
-const SideBar = () => {
+const SideBar = ({ menu }) => {
    const [open, setOpen] = useState(false);
 
    return (
-      <aside className={`SideBar ${open ? 'sidebar-open' : 'sidebar-close'}`}>
-         <div className="sidebar-controls" onClick={(e) => setOpen(!open)}>
-            {open ? (
-               <BsArrowLeftCircle className="icon" />
-            ) : (
-               <BsArrowRightCircle className="icon" />
-            )}
-         </div>
+      <>
+         {menu ? (
+            ''
+         ) : (
+            <aside
+               className={`SideBar ${open ? 'sidebar-open' : 'sidebar-close'}`}
+            >
+               <div
+                  className="sidebar-controls"
+                  onClick={(e) => setOpen(!open)}
+               >
+                  {open ? (
+                     <BsArrowLeftCircle className="icon" />
+                  ) : (
+                     <BsArrowRightCircle className="icon" />
+                  )}
+               </div>
 
-         <img
-            className="image-fill"
-            src={LogoColor}
-            alt="Logo of Social Connect"
-         />
-         <img
-            className="image-icon"
-            src={LogoColorIcon}
-            alt="Logo of Social Connect"
-         />
+               <img
+                  className="image-fill"
+                  src={LogoColor}
+                  alt="Logo of Social Connect"
+               />
+               <img
+                  className="image-icon"
+                  src={LogoColorIcon}
+                  alt="Logo of Social Connect"
+               />
 
-         <Navigation />
-      </aside>
+               <Navigation />
+            </aside>
+         )}
+      </>
    );
 };
 

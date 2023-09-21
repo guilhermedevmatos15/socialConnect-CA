@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+@import '../../../styles/extra/variables.scss';
+
+.Message {
+   max-width: 500px;
+   margin: 30px auto 0 auto;
+   padding: 30px;
+   border-radius: 10px;
+   background-color: white;
+   text-align: center;
+
+   .icon {
+      display: block;
+      width: 100%;
+      font-size: 2rem;
+
+      &.icon-no-like, &.icon-error {
+         color: lighten(red, 10);
+      }
+      &.icon-load {
+         color: darken($color-05, 10);
+      }
+   }
+
+   p {
+      margin-top: 15px;
+      font-size: 1.1rem;
+   }
+}

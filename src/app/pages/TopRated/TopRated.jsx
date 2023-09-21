@@ -1,7 +1,7 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { memo, useContext, useEffect, useState } from 'react';
 
 // * components
-import Loading from '../../components/shared/Loading/Loading';
+import Message from '../../components/shared/Message/Message';
 import Post from '../../components/shared/Post/Post';
 
 // * style
@@ -16,10 +16,9 @@ import { postsContext } from '../../contexts/PostContext';
 // * img
 
 // * icons
-import { FaMedal } from "react-icons/fa";
+import { FaMedal } from 'react-icons/fa';
 import { BiMedal } from 'react-icons/bi';
 import { GiStarMedal } from 'react-icons/gi';
-
 
 const TopRated = () => {
    const { posts } = useContext(postsContext);
@@ -29,26 +28,26 @@ const TopRated = () => {
    useEffect(() => {
       const response = orderPostsByLikeCont(posts);
 
-      const arrayUp = [
-         response[response.length - 1],
+      setTopPosts([
+         response[response.length - 1], // Last element (more likes)
          response[response.length - 2],
          response[response.length - 3],
-      ];
-
-      setTopPosts([...arrayUp]);
+      ]);
    }, [posts]);
 
    return (
       <div className="TopRated">
          {topPosts.length < 1 ? (
-            <Loading page="Top Rated" />
+            <Message message={'Wait, this page is loading'} icon='load' />
          ) : (
             <section>
                <h1>Top Rated</h1>
 
                <div className="podium">
                   <div className="podium-element" id="podium-1">
-                     <h2>1° Place <FaMedal className='podium-medal' /></h2>
+                     <h2>
+                        1° Place <FaMedal className="podium-medal" />
+                     </h2>
                      <Post
                         id={topPosts[0]?._id}
                         name={topPosts[0]?.author}
@@ -60,7 +59,9 @@ const TopRated = () => {
                      />
                   </div>
                   <div className="podium-element" id="podium-2">
-                     <h2>2° Place <BiMedal className='podium-medal' /></h2>
+                     <h2>
+                        2° Place <BiMedal className="podium-medal" />
+                     </h2>
                      <Post
                         id={topPosts[1]?._id}
                         name={topPosts[1]?.author}
@@ -72,7 +73,9 @@ const TopRated = () => {
                      />
                   </div>
                   <div className="podium-element" id="podium-3">
-                     <h2>3° Place <GiStarMedal className='podium-medal' /></h2>
+                     <h2>
+                        3° Place <GiStarMedal className="podium-medal" />
+                     </h2>
                      <Post
                         id={topPosts[2]?._id}
                         name={topPosts[2]?.author}
@@ -90,4 +93,4 @@ const TopRated = () => {
    );
 };
 
-export default TopRated;
+export default memo(TopRated);
