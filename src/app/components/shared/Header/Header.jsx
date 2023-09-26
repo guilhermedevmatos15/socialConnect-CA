@@ -27,7 +27,9 @@ const Header = ({ enableMenu }) => {
 
    return (
       <>
-         {JSON.parse(enableMenu) && <Menu open={openMenu} setOpen={setOpenMenu} />}
+         {JSON.parse(enableMenu) && (
+            <Menu open={openMenu} setOpen={setOpenMenu} />
+         )}
          <header className="Header">
             {JSON.parse(enableMenu) ? (
                <HiMenu
@@ -40,7 +42,12 @@ const Header = ({ enableMenu }) => {
                <div className="ignore-element"></div>
             )}
             <div>
-               <button className="btn">
+               <button
+                  className="btn"
+                  onClick={(e) => {
+                     Navigate('create-post');
+                  }}
+               >
                   <AiOutlinePlus className="btn-icon" /> To Add
                </button>
                <img

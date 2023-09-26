@@ -4,6 +4,7 @@ import { useNavigate, Outlet } from 'react-router-dom';
 // * components
 import SideBar from '../../components/shared/SideBar/SideBar';
 import Header from '../../components/shared/Header/Header';
+import ButtonToTop from '../../components/shared/ButtonToTop/ButtonToTop';
 
 // * style
 import './Dashboard.scss';
@@ -44,11 +45,12 @@ const Dashboard = () => {
    return (
       <div className="Dashboard">
          <SideBar enableMenu={enableMenu} />
+         <ButtonToTop />
 
-         <div className={enableMenu ? 'no-margin' : ''}>
+         <main className={enableMenu ? 'no-margin' : ''}>
             <Header enableMenu={enableMenu} />
             <Outlet />
-         </div>
+         </main>
       </div>
    );
 };

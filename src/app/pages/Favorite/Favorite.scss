@@ -4,7 +4,7 @@
 
 .Favorite {
    width: 100%;
-   max-width: 1000px;
+   max-width: $max-width-section;
    min-height: 100vh;
    margin: auto;
 
@@ -14,21 +14,27 @@
       padding: 30px 30px 80px 30px;
       border-radius: 10px;
       background-color: white;
-   }
 
-   h1 {
-      font-size: 2.2rem;
-      font-weight: 600;
-   }
+      > div {
+         &:nth-child(2) {
+            margin-top: 50px;
+         }
 
-   .posts {
-      margin: 30px auto 0 auto;
-      width: 100%;
-      display: flex;
-      // flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 30px;
+         h2 {
+            font-size: 2rem;
+            font-weight: 600;
+         }
+
+         .posts {
+            margin: 30px auto 0 auto;
+            width: 100%;
+            display: flex;
+            // flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+         }
+      }
    }
 }

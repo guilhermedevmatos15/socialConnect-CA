@@ -14,6 +14,8 @@ import Favorite from './app/pages/Favorite/Favorite';
 
 import Profile from './app/pages/Profile/Profile';
 
+import CreatePost from './app/components/shared/CreatePost/CreatePost';
+
 const Router = createBrowserRouter([
    {
       path: '/',
@@ -43,6 +45,10 @@ const Router = createBrowserRouter([
                {
                   path: '/dashboard/profile',
                   element: <Profile />,
+               },
+               {
+                  path: '/dashboard/create-post',
+                  element: <CreatePost />,
                },
             ],
          },

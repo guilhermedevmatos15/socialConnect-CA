@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+@import '../../../styles/extra/variables.scss';
+
+.ButtonToTop {
+   $size-button: 50px;
+
+   min-width: initial;
+   position: fixed;
+   bottom: 50px;
+   right: 50px;
+   width: $size-button;
+   height: $size-button;
+   padding: 10px 5px;
+
+   .btn-icon {
+      font-size: 1.5rem;
+   }
+}

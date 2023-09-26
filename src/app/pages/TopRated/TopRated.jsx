@@ -49,6 +49,7 @@ const TopRated = () => {
                         1° Place <FaMedal className="podium-medal" />
                      </h2>
                      <Post
+                        type='web'
                         id={topPosts[0]?._id}
                         name={topPosts[0]?.author}
                         description={topPosts[0]?.description}
@@ -63,6 +64,7 @@ const TopRated = () => {
                         2° Place <BiMedal className="podium-medal" />
                      </h2>
                      <Post
+                        type='web'
                         id={topPosts[1]?._id}
                         name={topPosts[1]?.author}
                         description={topPosts[1]?.description}
@@ -77,6 +79,7 @@ const TopRated = () => {
                         3° Place <GiStarMedal className="podium-medal" />
                      </h2>
                      <Post
+                        type='web'
                         id={topPosts[2]?._id}
                         name={topPosts[2]?.author}
                         description={topPosts[2]?.description}

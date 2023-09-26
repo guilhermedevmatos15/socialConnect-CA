@@ -25,7 +25,7 @@ const ForYou = () => {
    return (
       <div className="ForYou">
          {posts.length === 0 ? (
-            <Message message={messageLoading} icon='load' />
+            <Message message={messageLoading} icon="load" />
          ) : (
             <section>
                <div>
@@ -41,20 +41,19 @@ const ForYou = () => {
                   </button>
                </div>
                <div className="posts">
-                  {posts.map((post, index, arr) => {
-                     return (
-                        <Post
-                           key={`${post?.source.id}_${index}`}
-                           id={post?._id}
-                           name={post?.author}
-                           description={post?.content}
-                           imagePost={post?.urlToImage}
-                           imageUser={post?.imageUser}
-                           liked={post?.liked}
-                           likeCont={post?.likeCont}
-                        />
-                     );
-                  })}
+                  {posts.map((post, index) => (
+                     <Post
+                        key={`${post?.source.id}_${index}`}
+                        type="web"
+                        id={post?._id}
+                        name={post?.author}
+                        description={post?.content}
+                        imagePost={post?.urlToImage}
+                        imageUser={post?.imageUser}
+                        liked={post?.liked}
+                        likeCont={post?.likeCont}
+                     />
+                  ))}
                </div>
             </section>
          )}

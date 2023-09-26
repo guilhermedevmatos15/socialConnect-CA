@@ -10,6 +10,7 @@ import './Post_responsive.scss';
 
 // * contexts
 import { postsContext } from '../../../contexts/PostContext';
+import { userContext } from '../../../contexts/UserContext';
 
 // * img
 
@@ -17,6 +18,7 @@ import { postsContext } from '../../../contexts/PostContext';
 import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
 
 const Post = ({
+   type,
    id,
    name,
    imagePost,
@@ -26,42 +28,78 @@ const Post = ({
    likeCont,
 }) => {
    const { posts, setPosts } = useContext(postsContext);
+   const { user, setUser } = useContext(userContext);
+
+   function handleClickWEB(e) {
+      setPosts(
+         posts.map((post) =>
+            post?._id === id
+               ? {
+                  ...post,
+                  liked: !liked,
+                  likeCont: liked
+                     ? Number(likeCont) - 1
+                     : Number(likeCont) + 1,
+               }
+               : post
+         )
+      );
+   }
+
+   function handleClickMY(e) {
+      setUser({
+         ...user,
+         userPosts: user.userPosts.map((post) =>
+            post?._id === id
+               ? {
+                  ...post,
+                  liked: !liked,
+                  likeCont: liked
+                     ? Number(likeCont) - 1
+                     : Number(likeCont) + 1,
+               }
+               : post
+         ),
+      });
+   }
 
    return (
       <article className="Post">
          <img src={imagePost} alt={description} />
+
          <div className="user-content">
             <div className="user-info" title={`Go to ${name}`}>
                <img src={imageUser} alt="Icon user" />
                <p className="user-name">{name}</p>
             </div>
-            <div
-               className="user-iterations"
-               onClick={(e) =>
-                  setPosts(
-                     posts.map((value) =>
-                        // eslint-disable-next-line eqeqeq
-                        value?._id == id
-                           ? {
-                              ...value,
-                              liked: !liked,
-                              likeCont: liked
-                                 ? Number(likeCont) - 1
-                                 : Number(likeCont) + 1,
-                           }
-                           : value
-                     )
-                  )
-               }
-            >
-               {liked ? (
-                  <AiFillHeart className="icon-heart-fill icon" />
-               ) : (
-                  <AiOutlineHeart className="icon-heart-outline icon" />
-               )}
 
-               <span className="like-counter">{likeCont}</span>
-            </div>
+            {String(type) === 'web' ? (
+               <div
+                  className="user-iterations"
+                  onClick={(e) => handleClickWEB(e)}
+               >
+                  {liked ? (
+                     <AiFillHeart className="icon-heart-fill icon" />
+                  ) : (
+                     <AiOutlineHeart className="icon-heart-outline icon" />
+                  )}
+
+                  <span className="like-counter">{likeCont}</span>
+               </div>
+            ) : (
+               <div
+                  className="user-iterations"
+                  onClick={(e) => handleClickMY(e)}
+               >
+                  {liked ? (
+                     <AiFillHeart className="icon-heart-fill icon" />
+                  ) : (
+                     <AiOutlineHeart className="icon-heart-outline icon" />
+                  )}
+
+                  <span className="like-counter">{likeCont}</span>
+               </div>
+            )}
          </div>
       </article>
    );

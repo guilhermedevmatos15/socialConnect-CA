@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+@import '../../styles/extra/variables.scss';
+
+.Profile {
+   @media (max-width: 650px) {
+      section {
+         > div {
+
+            &.profile-content {
+               max-width: 100%;
+            }
+         }
+      }
+   }
+}
