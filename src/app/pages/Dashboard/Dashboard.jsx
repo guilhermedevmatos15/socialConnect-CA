@@ -7,6 +7,7 @@ import Header from '../../components/shared/Header/Header';
 
 // * style
 import './Dashboard.scss';
+import './Dashboard_responsive.scss';
 
 // * scripts
 
@@ -31,21 +32,21 @@ const Dashboard = () => {
    // eslint-disable-next-line react-hooks/exhaustive-deps
    }, []);
 
-   const [menu, setMenu] = useState(window.innerWidth <= 550 ? true : false);
+   const [enableMenu, setEnableMenu] = useState(window.innerWidth <= 550 ? true : false);
    window.addEventListener('resize', (e) => {
       if (window.innerWidth <= 550) {
-         setMenu(true);
+         setEnableMenu(true);
       } else {
-         setMenu(false);
+         setEnableMenu(false);
       }
    });
 
    return (
       <div className="Dashboard">
-         <SideBar menu={menu} />
+         <SideBar enableMenu={enableMenu} />
 
-         <div className={menu ? 'no-margin' : ''}>
-            <Header menu={menu} />
+         <div className={enableMenu ? 'no-margin' : ''}>
+            <Header enableMenu={enableMenu} />
             <Outlet />
          </div>
       </div>

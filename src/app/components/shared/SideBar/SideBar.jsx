@@ -18,12 +18,12 @@ import LogoColorIcon from '../../../assets/img/logos/sc-icon-color.png';
 // * icons
 import { BsArrowLeftCircle, BsArrowRightCircle } from 'react-icons/bs';
 
-const SideBar = ({ menu }) => {
+const SideBar = ({ enableMenu }) => {
    const [open, setOpen] = useState(false);
 
    return (
       <>
-         {menu ? (
+         {enableMenu ? (
             ''
          ) : (
             <aside

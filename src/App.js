@@ -9,6 +9,7 @@ import './app/styles/index.scss';
 // * AOS (animation)
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+
 AOS.init({
    duration: 1300,
 });

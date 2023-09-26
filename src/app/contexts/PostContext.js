@@ -40,7 +40,7 @@ const PostContext = ({ children }) => {
                            _id: `${index}_${String(post.title).split(' ')[0]}_${post.source.id}`,
 
                            // Definindo autor, apenas 1° e 2° nome e retirando uma possível ,
-                           author: `${currentAuthor[0] ? currentAuthor[0] : ''} ${String(currentAuthor[1]).replace(',', '')}`,
+                           author: `${currentAuthor[0] ? currentAuthor[0].replace(',', '') : 'not-identifie'}`,
 
                            // Gerando imagem aleatória para o usuário
                            imageUser: getRandomImage(),
@@ -49,7 +49,7 @@ const PostContext = ({ children }) => {
                            liked: false,
 
                            // Contador de curtidas
-                           likeCont: getRandomNumber(100, 5000),
+                           likeCont: getRandomNumber(100, 9999),
                         };
                      })
                   );
@@ -59,7 +59,6 @@ const PostContext = ({ children }) => {
                }
             } catch (e) {
                console.log('Error, please reload page.');
-               console.log(e);
             }
          })();
       }

@@ -18,7 +18,7 @@ import { userContext } from '../../../contexts/UserContext';
 import { HiMenu } from 'react-icons/hi';
 import { AiOutlinePlus } from 'react-icons/ai';
 
-const Header = ({ menu }) => {
+const Header = ({ enableMenu }) => {
    const { user } = useContext(userContext);
 
    const Navigate = useNavigate();
@@ -27,9 +27,9 @@ const Header = ({ menu }) => {
 
    return (
       <>
-         {JSON.parse(menu) && <Menu open={openMenu} setOpen={setOpenMenu} />}
+         {JSON.parse(enableMenu) && <Menu open={openMenu} setOpen={setOpenMenu} />}
          <header className="Header">
-            {JSON.parse(menu) ? (
+            {JSON.parse(enableMenu) ? (
                <HiMenu
                   className="icon-menu"
                   onClick={(e) => {
@@ -44,7 +44,7 @@ const Header = ({ menu }) => {
                   <AiOutlinePlus className="btn-icon" /> To Add
                </button>
                <img
-                  className="header-profile-image"
+                  className="profile-image header-profile-image"
                   src={user?.image}
                   alt="user profile img"
                   onClick={(e) => Navigate('profile')}

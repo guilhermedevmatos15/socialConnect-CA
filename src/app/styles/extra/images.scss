@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+@import './variables.scss';
+
+img {
+   width: 150px;
+
+   &.profile-image {
+      border-radius: 50%;
+   }
+}
