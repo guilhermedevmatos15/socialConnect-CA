@@ -16,7 +16,7 @@
       align-items: center;
       gap: 30px;
 
-      > div {
+      > div:not(.Modal) {
          width: 100%;
          background-color: white;
          border-radius: 20px;
@@ -24,7 +24,8 @@
 
          &.profile-content {
             width: 100%;
-            max-width: 30%;
+            min-width: 200px;
+            max-width: 25%;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -32,8 +33,11 @@
             gap: 10px;
 
             img {
+               $size-image: 150px;
+
                width: 100%;
-               max-width: 150px;
+               max-width: $size-image;
+               height: $size-image;
             }
 
             .profile-username-container {

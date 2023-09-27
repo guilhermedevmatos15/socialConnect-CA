@@ -1,8 +1,10 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 
 // * components
 import Message from '../../components/shared/Message/Message';
 import Post from '../../components/shared/Post/Post';
+import Modal from '../../components/shared/Modal/Modal';
+import EditProfile from '../../components/shared/EditProfile/EditProfile';
 
 // * style
 import './Profile.scss';
@@ -19,7 +21,9 @@ import { userContext } from '../../contexts/UserContext';
 import { MdOutlineEdit } from 'react-icons/md';
 
 const Profile = () => {
-   const { user, setUser } = useContext(userContext);
+   const { user } = useContext(userContext);
+
+   const [openModalEdit, setOpenModalEdit] = useState(false);
 
    return (
       <div className="Profile">
@@ -42,7 +46,10 @@ const Profile = () => {
                      <p className="profile-data">{user?.name}</p>
                   </div>
 
-                  <button className="btn">
+                  <button
+                     className="btn"
+                     onClick={(e) => setOpenModalEdit(true)}
+                  >
                      <MdOutlineEdit className="btn-icon" /> Edit
                   </button>
                </div>
@@ -50,7 +57,7 @@ const Profile = () => {
                <div className="profile-posts">
                   <h2>Your Posts</h2>
 
-                  <div className='posts'>
+                  <div className="posts">
                      {user?.userPosts.map((post, index) => (
                         <Post
                            key={`${post?._id}_${index}`}
@@ -66,6 +73,11 @@ const Profile = () => {
                      ))}
                   </div>
                </div>
+
+               {/* Modal */}
+               <Modal open={openModalEdit} setOpen={setOpenModalEdit} maxWidth='500px'>
+                  <EditProfile setOpenModal={setOpenModalEdit} />
+               </Modal>
             </section>
          )}
       </div>

@@ -16,6 +16,7 @@ const ButtonToTop = () => {
                behavior: 'smooth'
             });
          }}
+         title='Scroll to the top'
       >
          <BsArrowUpCircle className="btn-icon" />
       </button>

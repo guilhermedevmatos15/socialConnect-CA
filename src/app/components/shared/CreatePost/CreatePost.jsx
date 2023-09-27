@@ -18,10 +18,10 @@ import { userContext } from '../../../contexts/UserContext';
 // * icons
 
 const CreatePost = () => {
+   const { user, setUser } = useContext(userContext);
+
    // Ref for image
    const inputImageFile = useRef(null);
-
-   const { user, setUser } = useContext(userContext);
 
    const [description, setDescription] = useState('');
    const [image, setImage] = useState(null);

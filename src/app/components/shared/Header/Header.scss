@@ -20,7 +20,10 @@
    }
 
    .header-profile-image {
-      width: 50px;
+      $size-image: 50px;
+
+      width: $size-image;
+      height: $size-image;
       cursor: pointer;
       transition: all 0.6s;
    }

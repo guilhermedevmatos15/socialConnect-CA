@@ -47,12 +47,6 @@ const Navigation = () => {
                </span>
                <span className="text">Profile</span>
             </Link>
-            <Link to="settings" className="link">
-               <span className="icon">
-                  <AiFillSetting />
-               </span>
-               <span className="text">Settings</span>
-            </Link>
             <Link to="about" className="link">
                <span className="icon">
                   <MdOutlineFeed />

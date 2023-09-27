@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+@import '../../../styles/extra/variables.scss';
+
+.EditProfile {
+   margin-top: 10px;
+   width: 100%;
+
+   h2 {
+      font-size: 1.65rem;
+      font-weight: 600;
+   }
+
+   form {
+      margin-top: 10px;
+
+      label {
+         font-size: 1rem;
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: flex-start;
+         
+         &:nth-child(2) {
+            margin-top: 15px;
+         }
+      }
+   }
+}

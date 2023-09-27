@@ -21,6 +21,9 @@
       &.icon-load {
          color: darken($color-05, 10);
       }
+      &.icon-check {
+         color: lighten(green, 10);
+      }
    }
 
    p {
