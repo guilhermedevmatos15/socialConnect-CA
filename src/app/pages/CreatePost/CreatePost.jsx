@@ -7,11 +7,11 @@ import './CreatePost.scss';
 import './CreatePost_responsive.scss';
 
 // * scripts
-import getBase64Image from '../../../utils/getBase64Image';
-import rulesImage from '../../../utils/rulesImage';
+import getBase64Image from '../../utils/getBase64Image';
+import rulesImage from '../../utils/rulesImage';
 
 // * contexts
-import { userContext } from '../../../contexts/UserContext';
+import { userContext } from '../../contexts/UserContext';
 
 // * img
 
@@ -82,9 +82,9 @@ const CreatePost = () => {
 
    return (
       <div className="CreatePost">
-         <section>
+         <section className='container'>
             <form onSubmit={(e) => e.preventDefault()}>
-               <label>
+               {/* <label>
                   <span>Insert the image</span>
                   <input
                      ref={inputImageFile}
@@ -92,7 +92,19 @@ const CreatePost = () => {
                      type="file"
                      onChange={(e) => handleImageUpload(e)}
                   />
+               </label> */}
+
+               <label>
+                  <span>Choose a file:</span>
+                  <input
+                     accept=".jpg, .jpeg, .png, .gif, .pdf"
+                     className="input"
+                     type="file"
+                     onChange={(e) => handleImageUpload(e)}
+                     ref={inputImageFile}
+                  />
                </label>
+
                <label>
                   <span>Insert the description</span>
                   <input

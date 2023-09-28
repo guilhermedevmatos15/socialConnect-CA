@@ -15,7 +15,11 @@ import './Message.scss';
 
 // * icons
 import { FaRegCircleXmark } from 'react-icons/fa6';
-import { BsFillHeartbreakFill, BsPatchCheck } from 'react-icons/bs';
+import {
+   BsFillHeartbreakFill,
+   BsPatchCheck,
+   BsQuestionCircleFill,
+} from 'react-icons/bs';
 import { GrCloudDownload } from 'react-icons/gr';
 
 // Icon is passed for prop.children
@@ -31,7 +35,9 @@ const Message = ({ message, icon }) => {
          ) : Icon === 'load' ? (
             <GrCloudDownload className="icon icon-load" />
          ) : Icon === 'success' ? (
-            <BsPatchCheck className='icon icon-check' />
+            <BsPatchCheck className="icon icon-check" />
+         ) : Icon === 'question' ? (
+            <BsQuestionCircleFill className="icon icon-question" />
          ) : null}
 
          <p>{message}</p>

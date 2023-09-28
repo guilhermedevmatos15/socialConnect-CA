@@ -40,7 +40,7 @@ const TopRated = () => {
          {topPosts.length < 1 ? (
             <Message message={'Wait, this page is loading'} icon='load' />
          ) : (
-            <section>
+            <section className='container'>
                <h1>Top Rated</h1>
 
                <div className="podium">

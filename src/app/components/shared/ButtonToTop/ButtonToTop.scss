@@ -15,8 +15,13 @@
    padding: 10px 5px;
    border-radius: 50%;
    background-color: $color-04;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
 
    .btn-icon {
       font-size: 1.5rem;
+   }
+
+   &:hover {
+      background-color: darken($color-04, 10);
    }
 }

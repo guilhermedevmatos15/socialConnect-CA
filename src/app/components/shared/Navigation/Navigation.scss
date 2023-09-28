@@ -68,3 +68,47 @@
       }
    }
 }
+
+.Modal {
+   .Message {
+      margin-top: 10px;
+      padding: 0;
+
+      .icon {
+         font-size: 2.5rem;
+      }
+   }
+
+   .btn-container {
+      margin-top: 20px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+
+      .btn-confirm {
+         $bg-color: rgb(255, 74, 74);
+
+         font-weight: 400;
+         color: white;
+         background-color: $bg-color;
+         
+         &:hover {
+            background-color: darken($bg-color, 10);
+         }
+      }
+
+      .btn-cancel {
+         background-color: transparent;
+         border: 1px solid gray;
+         color: gray;
+         font-weight: 500;
+
+         &:hover {
+            background-color: gray;
+            color: white;
+         }
+      }
+   }
+}

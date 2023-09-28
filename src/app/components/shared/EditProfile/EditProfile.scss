@@ -15,14 +15,45 @@
       margin-top: 10px;
 
       label {
+         width: auto;
          font-size: 1rem;
          display: flex;
          flex-direction: column;
          justify-content: center;
          align-items: flex-start;
-         
+         gap: 5px;
+
          &:nth-child(2) {
             margin-top: 15px;
+         }
+
+         input[type='file'] {
+            box-shadow: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            outline: none;
+            
+            &:focus {
+               border: 1px solid $color-04;
+            }
+         }
+
+         input[type='text'] {
+            box-shadow: none;
+
+            &:focus {
+               border: 1px solid $color-04;
+            }
+         }
+      }
+
+      button {
+         display: block;
+         margin: 20px auto 0 auto;
+         background-color: darken($color-05, 5);
+
+         &:hover {
+            background-color: darken($color-05, 10);
          }
       }
    }

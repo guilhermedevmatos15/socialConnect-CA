@@ -24,6 +24,9 @@
       &.icon-check {
          color: lighten(green, 10);
       }
+      &.icon-question {
+         color: darken(yellow, 10);
+      }
    }
 
    p {

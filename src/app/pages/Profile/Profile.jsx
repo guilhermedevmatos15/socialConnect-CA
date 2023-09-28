@@ -33,7 +33,7 @@ const Profile = () => {
                icon="load"
             />
          ) : (
-            <section>
+            <section className='container'>
                <div className="profile-content">
                   <img
                      className="profile-image main-profile-image"
@@ -42,7 +42,6 @@ const Profile = () => {
                   />
 
                   <div className="profile-username-container">
-                     <h3 className="profile-specification">Username</h3>
                      <p className="profile-data">{user?.name}</p>
                   </div>
 
@@ -54,28 +53,39 @@ const Profile = () => {
                   </button>
                </div>
 
-               <div className="profile-posts">
-                  <h2>Your Posts</h2>
+               {user?.userPosts.length >= 1 ? (
+                  <div className="profile-posts">
+                     <h2>Your Posts</h2>
 
-                  <div className="posts">
-                     {user?.userPosts.map((post, index) => (
-                        <Post
-                           key={`${post?._id}_${index}`}
-                           type="profile"
-                           id={post?._id}
-                           name={user?.name}
-                           description={post?.content}
-                           imagePost={post?.urlToImage}
-                           imageUser={post?.imageUser}
-                           liked={post?.liked}
-                           likeCont={post?.likeCont}
-                        />
-                     ))}
+                     <div className="posts">
+                        {user?.userPosts.map((post, index) => (
+                           <Post
+                              key={`${post?._id}_${index}`}
+                              type="profile"
+                              id={post?._id}
+                              name={user?.name}
+                              description={post?.content}
+                              imagePost={post?.urlToImage}
+                              imageUser={post?.imageUser}
+                              liked={post?.liked}
+                              likeCont={post?.likeCont}
+                           />
+                        ))}
+                     </div>
                   </div>
-               </div>
+               ) : (
+                  <Message
+                     icon="no-like"
+                     message="You haven't made a post yet"
+                  />
+               )}
 
                {/* Modal */}
-               <Modal open={openModalEdit} setOpen={setOpenModalEdit} maxWidth='500px'>
+               <Modal
+                  open={openModalEdit}
+                  setOpen={setOpenModalEdit}
+                  maxWidth="425px"
+               >
                   <EditProfile setOpenModal={setOpenModalEdit} />
                </Modal>
             </section>

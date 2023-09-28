@@ -14,7 +14,7 @@ import Favorite from './app/pages/Favorite/Favorite';
 
 import Profile from './app/pages/Profile/Profile';
 
-import CreatePost from './app/components/shared/CreatePost/CreatePost';
+import CreatePost from './app/pages/CreatePost/CreatePost';
 
 const Router = createBrowserRouter([
    {

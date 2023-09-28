@@ -4,8 +4,8 @@
 
 .Profile {
    @media (max-width: 650px) {
-      section {
-         > div {
+      .container {
+         > div:not(.Modal) {
 
             &.profile-content {
                max-width: 100%;

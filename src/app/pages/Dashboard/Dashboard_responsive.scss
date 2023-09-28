@@ -3,7 +3,7 @@
 @import '../../styles/extra/variables.scss';
 
 .Dashboard {
-   > div {
+   main {
       @media (max-width: 450px) {
          & {
             padding: 50px 20px;

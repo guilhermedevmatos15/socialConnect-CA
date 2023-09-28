@@ -27,7 +27,7 @@ const ForYou = () => {
          {posts.length === 0 ? (
             <Message message={messageLoading} icon="load" />
          ) : (
-            <section>
+            <section className='container'>
                <div>
                   <h1>For You</h1>
                   <button

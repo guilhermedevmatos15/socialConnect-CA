@@ -44,7 +44,7 @@ const Favorite = () => {
          {favoriteMyPosts.length < 1 && favoriteOtherPosts.length < 1 ? (
             <Message message="Sorry! You didn't like any post" icon="no-like" />
          ) : (
-            <section>
+            <section className='container'>
                {!(favoriteMyPosts.length < 1) && (
                   <div>
                      <h2>Your posts</h2>

@@ -9,13 +9,13 @@
    align-items: center;
 
    button {
-      $color-button: rgb(0, 179, 0);
+      $color-button: $color-05;
 
       padding: 10px 20px 10px 18px;
-      background-color: $color-button;
+      background-color: darken($color-button, 5);
 
       &:hover {
-         background-color: darken($color-button, 15);
+         background-color: darken($color-button, 20);
       }
    }
 

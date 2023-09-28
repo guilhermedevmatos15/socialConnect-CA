@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 // * components
+import Modal from '../Modal/Modal';
+import Message from '../Message/Message';
 
 // * style
 import './Navigation.scss';
 
 // * scripts
+import logOut from '../../../utils/logOut';
 
 // * contexts
 
@@ -20,6 +23,12 @@ import { MdOutlineFeed } from 'react-icons/md';
 import { BiSolidLogIn } from 'react-icons/bi';
 
 const Navigation = () => {
+   const [openModal, setOpenModal] = useState(false);
+
+   function handleLogOut(e) {
+      setOpenModal(true);
+   }
+
    return (
       <>
          <div className="basic-links-group">
@@ -56,13 +65,27 @@ const Navigation = () => {
          </div>
 
          <div className="logout-link-group">
-            <div className="link">
+            <div className="link" onClick={(e) => handleLogOut(e)}>
                <span className="icon">
                   <BiSolidLogIn />
                </span>
                <span className="text">LogOut</span>
             </div>
          </div>
+
+         {/* Modal */}
+         <Modal open={openModal} setOpen={setOpenModal} maxWidth="350px">
+            <Message icon="question" message="Do you want to log out?" />
+
+            <div className="btn-container">
+               <button className="btn btn-confirm" onClick={(e) => logOut()}>
+                  Confirm
+               </button>
+               <button className="btn btn-cancel" onClick={(e) => setOpenModal(false)}>
+                  Cancel
+               </button>
+            </div>
+         </Modal>
       </>
    );
 };

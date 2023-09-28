@@ -6,7 +6,7 @@
    width: 100%;
    min-height: 85vh;
 
-   section {
+   .container {
       width: 100%;
       max-width: $max-width-section;
       margin: 50px auto 0 auto;
@@ -17,7 +17,7 @@
       gap: 30px;
 
       > div:not(.Modal) {
-         width: 100%;
+         width: auto; min-width: 600px; max-width: 100%;
          background-color: white;
          border-radius: 20px;
          padding: 20px;
@@ -47,10 +47,14 @@
                justify-content: center;
                align-items: center;
                text-align: center;
+
+               p {
+                  font-size: 1.1rem;
+               }
             }
 
             button {
-               $color-button: darken(orange, 5);
+               $color-button: $color-01;
 
                margin-top: 10px;
                background-color: $color-button;
@@ -84,5 +88,11 @@
             }
          }
       }
+   }
+
+   section.Message {
+      width: 100%;
+      max-width: $max-width-section;
+      margin: 50px auto 0 auto;
    }
 }
