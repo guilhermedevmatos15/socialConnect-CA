@@ -13,6 +13,7 @@ import TopRated from './app/pages/TopRated/TopRated';
 import Favorite from './app/pages/Favorite/Favorite';
 
 import Profile from './app/pages/Profile/Profile';
+import About from './app/pages/About/About';
 
 import CreatePost from './app/pages/CreatePost/CreatePost';
 
@@ -45,6 +46,10 @@ const Router = createBrowserRouter([
                {
                   path: '/dashboard/profile',
                   element: <Profile />,
+               },
+               {
+                  path: '/dashboard/about',
+                  element: <About />,
                },
                {
                   path: '/dashboard/create-post',

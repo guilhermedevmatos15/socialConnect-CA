@@ -68,7 +68,7 @@ const Post = ({
          <img src={imagePost} alt={description} />
 
          <div className="user-content">
-            <div className="user-info" title={`Go to ${name}`}>
+            <div className="user-info">
                <img src={imageUser} alt="Icon user" />
                <p className="user-name">{name}</p>
             </div>

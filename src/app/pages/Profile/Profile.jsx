@@ -33,7 +33,7 @@ const Profile = () => {
                icon="load"
             />
          ) : (
-            <section className='container'>
+            <section className="container">
                <div className="profile-content">
                   <img
                      className="profile-image main-profile-image"
@@ -79,17 +79,17 @@ const Profile = () => {
                      message="You haven't made a post yet"
                   />
                )}
-
-               {/* Modal */}
-               <Modal
-                  open={openModalEdit}
-                  setOpen={setOpenModalEdit}
-                  maxWidth="425px"
-               >
-                  <EditProfile setOpenModal={setOpenModalEdit} />
-               </Modal>
             </section>
          )}
+
+         {/* Modal */}
+         <Modal
+            open={openModalEdit}
+            setOpen={setOpenModalEdit}
+            maxWidth="425px"
+         >
+            <EditProfile setOpenModal={setOpenModalEdit} />
+         </Modal>
       </div>
    );
 };
