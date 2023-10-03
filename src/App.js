@@ -1,5 +1,8 @@
 import React from 'react';
 
+// * Animation for replacement page
+import { AnimatePresence } from 'framer-motion';
+
 // * React Router
 import { Outlet } from 'react-router-dom';
 
@@ -15,7 +18,11 @@ AOS.init({
 });
 
 const App = () => {
-   return <Outlet />;
+   return (
+      <AnimatePresence mode='wait'>
+         <Outlet />
+      </AnimatePresence>
+   );
 };
 
 export default App;

@@ -1,5 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
 
+// * Animation
+import TransitionAnimation from '../../components/shared/TransitionAnimation/TransitionAnimation';
+
 // * components
 import Post from '../../components/shared/Post/Post';
 import Message from '../../components/shared/Message/Message';
@@ -40,61 +43,66 @@ const Favorite = () => {
    }, [posts, user]);
 
    return (
-      <div className="Favorite">
-         {favoriteMyPosts.length < 1 && favoriteOtherPosts.length < 1 ? (
-            <Message message="Sorry! You didn't like any post" icon="no-like" />
-         ) : (
-            <section className='container'>
-               {!(favoriteMyPosts.length < 1) && (
-                  <div>
-                     <h2>Your posts</h2>
+      <TransitionAnimation>
+         <div className="Favorite">
+            {favoriteMyPosts.length < 1 && favoriteOtherPosts.length < 1 ? (
+               <Message
+                  message="Sorry! You didn't like any post"
+                  icon="no-like"
+               />
+            ) : (
+               <section className="container">
+                  {!(favoriteMyPosts.length < 1) && (
+                     <div>
+                        <h2>Your posts</h2>
 
-                     <div className="posts">
-                        {favoriteMyPosts
-                           .map((post, index) => (
-                              <Post
-                                 key={`${post?._id}_${index}`}
-                                 type="profile"
-                                 id={post?._id}
-                                 name={post?.author}
-                                 description={post?.content}
-                                 imagePost={post?.urlToImage}
-                                 imageUser={post?.imageUser}
-                                 liked={post?.liked}
-                                 likeCont={post?.likeCont}
-                              />
-                           ))
-                           .reverse()}
+                        <div className="posts">
+                           {favoriteMyPosts
+                              .map((post, index) => (
+                                 <Post
+                                    key={`${post?._id}_${index}`}
+                                    type="profile"
+                                    id={post?._id}
+                                    name={post?.author}
+                                    description={post?.content}
+                                    imagePost={post?.urlToImage}
+                                    imageUser={post?.imageUser}
+                                    liked={post?.liked}
+                                    likeCont={post?.likeCont}
+                                 />
+                              ))
+                              .reverse()}
+                        </div>
                      </div>
-                  </div>
-               )}
+                  )}
 
-               {!(favoriteOtherPosts?.length < 1) && (
-                  <div>
-                     <h2>Other posts</h2>
+                  {!(favoriteOtherPosts?.length < 1) && (
+                     <div>
+                        <h2>Other posts</h2>
 
-                     <div className="posts">
-                        {favoriteOtherPosts
-                           .map((post, index) => (
-                              <Post
-                                 key={`${post?.source.id}_${index}`}
-                                 type="web"
-                                 id={post?._id}
-                                 name={post?.author}
-                                 description={post?.content}
-                                 imagePost={post?.urlToImage}
-                                 imageUser={post?.imageUser}
-                                 liked={post?.liked}
-                                 likeCont={post?.likeCont}
-                              />
-                           ))
-                           .reverse()}
+                        <div className="posts">
+                           {favoriteOtherPosts
+                              .map((post, index) => (
+                                 <Post
+                                    key={`${post?.source.id}_${index}`}
+                                    type="web"
+                                    id={post?._id}
+                                    name={post?.author}
+                                    description={post?.content}
+                                    imagePost={post?.urlToImage}
+                                    imageUser={post?.imageUser}
+                                    liked={post?.liked}
+                                    likeCont={post?.likeCont}
+                                 />
+                              ))
+                              .reverse()}
+                        </div>
                      </div>
-                  </div>
-               )}
-            </section>
-         )}
-      </div>
+                  )}
+               </section>
+            )}
+         </div>
+      </TransitionAnimation>
    );
 };
 

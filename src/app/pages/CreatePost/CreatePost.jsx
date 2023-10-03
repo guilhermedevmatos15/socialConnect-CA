@@ -1,5 +1,8 @@
 import React, { useContext, useState, useRef } from 'react';
 
+// * Animation
+import TransitionAnimation from '../../components/shared/TransitionAnimation/TransitionAnimation';
+
 // * components
 
 // * style
@@ -81,50 +84,42 @@ const CreatePost = () => {
    }
 
    return (
-      <div className="CreatePost">
-         <section className='container'>
-            <form onSubmit={(e) => e.preventDefault()}>
-               {/* <label>
-                  <span>Insert the image</span>
-                  <input
-                     ref={inputImageFile}
-                     className="input"
-                     type="file"
-                     onChange={(e) => handleImageUpload(e)}
-                  />
-               </label> */}
+      <TransitionAnimation>
+         <div className="CreatePost">
+            <section className="container">
+               <form onSubmit={(e) => e.preventDefault()}>
+                  <label>
+                     <span>Choose a file:</span>
+                     <input
+                        accept=".jpg, .jpeg, .png, .gif, .pdf"
+                        className="input"
+                        type="file"
+                        onChange={(e) => handleImageUpload(e)}
+                        ref={inputImageFile}
+                     />
+                  </label>
 
-               <label>
-                  <span>Choose a file:</span>
-                  <input
-                     accept=".jpg, .jpeg, .png, .gif, .pdf"
-                     className="input"
-                     type="file"
-                     onChange={(e) => handleImageUpload(e)}
-                     ref={inputImageFile}
-                  />
-               </label>
+                  <label>
+                     <span>Insert the description</span>
+                     <input
+                        className="input"
+                        type="text"
+                        value={description}
+                        onInput={(e) => setDescription(String(e.target.value))}
+                     />
+                  </label>
 
-               <label>
-                  <span>Insert the description</span>
-                  <input
-                     className="input"
-                     type="text"
-                     value={description}
-                     onInput={(e) => setDescription(String(e.target.value))}
-                  />
-               </label>
-
-               <button
-                  className="btn"
-                  type="button"
-                  onClick={(e) => handleClick(e)}
-               >
-                  Create!
-               </button>
-            </form>
-         </section>
-      </div>
+                  <button
+                     className="btn"
+                     type="button"
+                     onClick={(e) => handleClick(e)}
+                  >
+                     Create!
+                  </button>
+               </form>
+            </section>
+         </div>
+      </TransitionAnimation>
    );
 };
 
