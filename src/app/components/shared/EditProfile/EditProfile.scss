@@ -15,7 +15,6 @@
       margin-top: 10px;
 
       label {
-         width: auto;
          font-size: 1rem;
          display: flex;
          flex-direction: column;
@@ -25,25 +24,6 @@
 
          &:nth-child(2) {
             margin-top: 15px;
-         }
-
-         input[type='file'] {
-            box-shadow: none;
-            padding: 10px 15px;
-            cursor: pointer;
-            outline: none;
-            
-            &:focus {
-               border: 1px solid $color-04;
-            }
-         }
-
-         input[type='text'] {
-            box-shadow: none;
-
-            &:focus {
-               border: 1px solid $color-04;
-            }
          }
       }
 

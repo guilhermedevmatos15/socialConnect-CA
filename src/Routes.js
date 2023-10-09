@@ -2,19 +2,16 @@ import React from 'react';
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-// <App>
+// * Components
 import App from './App';
 import Home from './app/pages/Home/Home';
 import Error from './app/pages/Error/Error';
-
 import Dashboard from './app/pages/Dashboard/Dashboard';
 import ForYou from './app/pages/ForYou/ForYou';
 import TopRated from './app/pages/TopRated/TopRated';
 import Favorite from './app/pages/Favorite/Favorite';
-
 import Profile from './app/pages/Profile/Profile';
 import About from './app/pages/About/About';
-
 import CreatePost from './app/pages/CreatePost/CreatePost';
 
 const Router = createBrowserRouter([

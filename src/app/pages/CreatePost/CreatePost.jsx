@@ -7,7 +7,6 @@ import TransitionAnimation from '../../components/shared/TransitionAnimation/Tra
 
 // * style
 import './CreatePost.scss';
-import './CreatePost_responsive.scss';
 
 // * scripts
 import getBase64Image from '../../utils/getBase64Image';
@@ -100,7 +99,7 @@ const CreatePost = () => {
                   </label>
 
                   <label>
-                     <span>Insert the description</span>
+                     <span>Insert the description:</span>
                      <input
                         className="input"
                         type="text"
