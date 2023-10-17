@@ -16,7 +16,7 @@ import logOut from '../../../utils/logOut';
 // * img
 
 // * icons
-import { AiFillStar, AiFillHeart, AiFillSetting } from 'react-icons/ai';
+import { AiFillStar, AiFillHeart } from 'react-icons/ai';
 import { BiRightTopArrowCircle } from 'react-icons/bi';
 import { CgProfile } from 'react-icons/cg';
 import { MdOutlineFeed } from 'react-icons/md';
